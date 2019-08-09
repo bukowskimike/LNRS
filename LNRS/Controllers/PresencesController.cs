@@ -7,21 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LNRS.Data;
 using LNRS.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace LNRS.Controllers
 {
     public class PresencesController : Controller
     {
+        private readonly UserManager<ApplicationUser> userManager;
         private readonly ApplicationDbContext _context;
 
-        public PresencesController(ApplicationDbContext context)
+        public PresencesController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            this.userManager = userManager;
         }
 
         // GET: Presences
         public async Task<IActionResult> Index()
         {
+            var loggedInUser = await userManager.GetUserAsync(User);
             return View(await _context.Presence.ToListAsync());
         }
 

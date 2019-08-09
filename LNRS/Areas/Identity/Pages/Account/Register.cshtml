@@ -37,6 +37,14 @@
                 <input asp-for="Input.ConfirmPassword" class="form-control" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
+            <input name="Input.RoleName" type="hidden" value="@Model.role" />
+
+            <p>
+                Lösenord sätts till:<br />
+                Abc123!
+                <br />
+            </p>
+
             <button type="submit" class="btn btn-primary">Skapa</button>
         </form>
     </div>

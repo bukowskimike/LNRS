@@ -4,26 +4,26 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Skapa</h1>
 
-<h4>Presence</h4>
+<h4>Inloggning</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
+                <label asp-for="Email" class="control-label">E-post</label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="StartTime" class="control-label"></label>
+                <label asp-for="StartTime" class="control-label">Starttid</label>
                 <input asp-for="StartTime" class="form-control" />
                 <span asp-validation-for="StartTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CauseStart" class="control-label"></label>
+                <label asp-for="CauseStart" class="control-label">Orsak till sen ankomst</label>
                 <input asp-for="CauseStart" class="form-control" />
                 <span asp-validation-for="CauseStart" class="text-danger"></span>
             @*</div>
@@ -38,14 +38,14 @@
                 <span asp-validation-for="CauseEnd" class="text-danger"></span>
             </div>*@
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Skapa" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Tillbaka till närvarolistan</a>
 </div>
 
 @section Scripts {

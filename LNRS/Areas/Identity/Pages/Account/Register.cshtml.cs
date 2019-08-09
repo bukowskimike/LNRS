@@ -41,6 +41,7 @@ namespace LNRS.Areas.Identity.Pages.Account
         [BindProperty]
         public InputModel Input { get; set; }
 
+        public string role;         // hantera roller vid skapa ny användare
         public string ReturnUrl { get; set; }
 
         public class InputModel
@@ -70,6 +71,8 @@ namespace LNRS.Areas.Identity.Pages.Account
             [Display(Name = "Bekräfta lösenord")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            //public string RoleName { get; set; }        // hantera roller användarkonton
         }
 
         public void OnGet(string returnUrl = null)
